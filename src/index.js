@@ -8,6 +8,16 @@ process.on('unhandledRejection', (reason, p) =>
   logger.error('Unhandled Rejection at: Promise ', p, reason)
 );
 
-server.on('listening', () =>
-  logger.info('Feathers application started on http://%s:%d', app.get('host'), port)
-);
+server.on('listening', () => {
+  logger.info('Feathers application started on http://%s:%d', app.get('host'), port);
+
+  app.service('basic').create({message: 'hey I need this', date: new Date()});
+
+  app.service('stuff').create({message: 'hold my thing', thing: 'beer', date: new Date()});
+
+  setTimeout(() => {
+    console.log('that was fun. bye now.');
+    process.exit();
+  }, 20 * 1000);
+
+});

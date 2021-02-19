@@ -9,7 +9,7 @@
   "authentication": {
     "entity": "user",
     "service": "users",
-    "secret": "/IOOt8Juk1tHG6OG57PKiM6SBFA=",
+    "secret": "EseghSUd78y9Np/VBhBN+75iTRA=",
     "authStrategies": [
       "jwt",
       "local"
@@ -30,6 +30,7 @@
   },
   "mysql": {
     "client": "mysql2",
-    "connection": "mysql://root:@localhost:3306/shortlived"
-  }
+    "connection": "mysql://root:bloedsinn@localhost:3306/satori"
+  },
+  "nedb": "../data"
 }
